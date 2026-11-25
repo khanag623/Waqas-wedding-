@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, Cambria, serif;
+  --font-sans: "Montserrat", system-ui, -apple-system, sans-serif;
+  --color-wine-900: #46111c;
+  --color-wine-800: #5a1726;
+  --color-wine-700: #6e1f2f;
+  --color-wine-600: #872b3d;
+  --color-gold-300: #ebd6a7;
+  --color-gold-400: #d9b872;
+  --color-gold-500: #c59b49;
+  --color-gold-600: #9f7930;
+  --color-ivory-50: #fdfaf7;
+  --color-ivory-100: #fbf4ef;
+  --color-blush-100: #f7eae4;
+  --color-blush-200: #eed8cf;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: #fdf8f5;
+    color: #2d161b;
+  }
+}
+
+.perspective-1500 {
+  perspective: 1500px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.velvet-surface {
+  background:
+    radial-gradient(circle at 28% 22%, rgba(162, 54, 76, 0.42) 0%, transparent 55%),
+    radial-gradient(circle at 80% 85%, rgba(45, 8, 16, 0.72) 0%, transparent 60%),
+    linear-gradient(145deg, #772133 0%, #5c1625 48%, #410e19 100%);
+}
+
+.paper-grain {
+  background-color: #fdf8f5;
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(201, 162, 93, 0.09) 0%, transparent 45%),
+    radial-gradient(circle at 85% 32%, rgba(110, 31, 47, 0.05) 0%, transparent 48%),
+    radial-gradient(circle at 22% 76%, rgba(201, 162, 93, 0.08) 0%, transparent 50%),
+    linear-gradient(180deg, #fdfaf7 0%, #faf1eb 52%, #fdf8f5 100%);
+}
+
+.gold-foil-text {
+  background: linear-gradient(135deg, #f3dfb0 0%, #c99f4d 45%, #f7e6bd 70%, #a57d32 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes petalDrift {
+  0% {
+    transform: translate3d(0, -8vh, 0) rotate(0deg) scale(0.9);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate3d(var(--drift-x, 36px), 102vh, 0) rotate(var(--drift-rot, 260deg)) scale(1.05);
+    opacity: 0;
+  }
+}
+
+.animate-petal-drift {
+  animation: petalDrift var(--drift-duration, 7s) linear forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes gentleSway {
+  0%, 100% {
+    transform: rotate(-2.2deg);
+  }
+  50% {
+    transform: rotate(2.2deg);
+  }
+}
+
+.animate-gentle-sway {
+  animation: gentleSway 5.5s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+@keyframes routeDash {
+  to {
+    stroke-dashoffset: -36;
+  }
+}
+
+.animate-route-dash {
+  animation: routeDash 2.6s linear infinite;
+}

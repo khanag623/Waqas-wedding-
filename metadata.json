@@ -1,0 +1,6 @@
+{
+  "name": "Abdul Waqas — Wedding Invitation",
+  "description": "Luxury interactive wedding invitation for Abdul Waqas (Son of Janab Abdul Qayum), celebrating Mehndi, Baraat, and Walima on 25–27 January 2027.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
